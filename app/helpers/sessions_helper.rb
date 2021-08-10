@@ -22,4 +22,16 @@ def current_user
 def logged_in?
     !current_user.nil?
     end
+
+# Returns true if a test user is logged in.
+    def is_logged_in?
+     !session[:user_id].nil?
+    end
+
+# Logs out the current user.
+def log_out
+    reset_session
+    @current_user = nil
+    end
+
 end
